@@ -25,31 +25,42 @@ struct MainTabBar: View {
     var body: some View {
         TabView(selection: $selectedTab) {
             Tab(value: TabIdentifier.home) {
-                HomeView()
+                NavigationStack {
+                    HomeView()
+                }
             } label: {
                 Image(systemName: IconConstants.house)
             }
             
             Tab(value: TabIdentifier.catalog) {
-                CatalogView()
+                NavigationStack {
+                    CatalogView()
+                }
             } label: {
                 Image(systemName: IconConstants.catalog)
             }
             
             Tab(value: TabIdentifier.cart) {
-                CartView()
+                NavigationStack {
+                    CartView()
+                }
             } label: {
                 Image(systemName: IconConstants.cart)
             }
+            .badge(3)
             
             Tab(value: TabIdentifier.wishlist) {
-                WishlistView()
+                NavigationStack {
+                    WishlistView()
+                }
             } label: {
                 Image(systemName: IconConstants.heart)
             }
             
             Tab(value: TabIdentifier.profile) {
-                ProfileView()
+                NavigationStack {
+                    ProfileView()
+                }
             } label: {
                 Image(systemName: IconConstants.person)
             }
